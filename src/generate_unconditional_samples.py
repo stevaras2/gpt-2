@@ -67,8 +67,8 @@ def sample_model(
         saver.restore(sess, ckpt)
 
         generated = 0
-        print(type(nsamples))
-        while nsamples == 0 or generated < nsamples:
+        print(type(nsamples),nsamples)
+        while nsamples == 0 or generated < int(nsamples):
             out = sess.run(output)
             for i in range(batch_size):
                 generated += batch_size
